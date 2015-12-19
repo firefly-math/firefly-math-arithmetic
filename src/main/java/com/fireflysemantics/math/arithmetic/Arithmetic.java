@@ -49,9 +49,8 @@ public final class Arithmetic {
 	 * @param y
 	 *            an addend
 	 * @return the sum {@code x+y}
-	 * @throws MathException[
-	 *             MAE__OVERFLOW_IN_ADDITION] if the result can not be
-	 *             represented as an {@code int}.
+	 * @throws MathException[MAE__OVERFLOW_IN_ADDITION]
+	 *             if the result can not be represented as an {@code int}.
 	 */
 	public static int addAndCheck(int x, int y) throws MathException {
 		long s = (long) x
@@ -71,9 +70,8 @@ public final class Arithmetic {
 	 * @param y
 	 *            an addend
 	 * @return the sum {@code x+y}
-	 * @throws MathException[
-	 *             MAE__OVERFLOW_IN_ADDITION] if the result can not be
-	 *             represented as an {@code long}.
+	 * @throws MathException[MAE__OVERFLOW_IN_ADDITION]
+	 *             if the result can not be represented as an {@code long}.
 	 */
 	public static long addAndCheck(long x, long y) throws MathException {
 		final long result = x
@@ -249,7 +247,7 @@ public final class Arithmetic {
 	 * @param y
 	 *            Number.
 	 * @return the greatest common divisor, never negative.
-	 * @throws MathException
+	 * @throws MathException[MAE__GCD_OVERFLOW_64_BITS]
 	 *             if the result cannot be represented as a non-negative
 	 *             {@code long} value.
 	 */
@@ -343,7 +341,7 @@ public final class Arithmetic {
 	 * @param y
 	 *            Number.
 	 * @return the least common multiple, never negative.
-	 * @throws MathException
+	 * @throws MathException[MAE__LCM_OVERFLOW_32_BITS]
 	 *             if the result cannot be represented as a non-negative
 	 *             {@code int} value.
 	 */
@@ -380,7 +378,7 @@ public final class Arithmetic {
 	 * @param y
 	 *            Number.
 	 * @return the least common multiple, never negative.
-	 * @throws MathException
+	 * @throws MathException[MAE__LCM_OVERFLOW_64_BITS]
 	 *             if the result cannot be represented as a non-negative
 	 *             {@code long} value.
 	 */
@@ -487,9 +485,8 @@ public final class Arithmetic {
 	 * @param y
 	 *            Subtrahend.
 	 * @return the difference {@code x - y}.
-	 * @throws MathException
+	 * @throws MathException[MAE__OVERFLOW_IN_SUBTRACTION]
 	 *             if the result can not be represented as an {@code int}.
-	 * @since 1.1
 	 */
 	public static int subAndCheck(int x, int y) throws MathException {
 		long s = (long) x
@@ -587,7 +584,7 @@ public final class Arithmetic {
 	 * @return \( x^y \)
 	 * @throws MathException[NOT_POSITIVE]
 	 *             if {@code y < 0}.
-	 * @throws MathException[MAE__INTEGER_OVERFLOW]
+	 * @throws MathException[MAE__LONG_OVERFLOW]
 	 *             if the result would overflow.
 	 */
 	public static long pow(final long x, final int y) throws MathException {
@@ -615,7 +612,7 @@ public final class Arithmetic {
 
 			return result;
 		} catch (MathException e) {
-			MathException me = new MathException(MAE__INTEGER_OVERFLOW).put(X, x).put(Y, y);
+			MathException me = new MathException(MAE__LONG_OVERFLOW).put(X, x).put(Y, y);
 			me.initCause(e);
 			throw me;
 		}
