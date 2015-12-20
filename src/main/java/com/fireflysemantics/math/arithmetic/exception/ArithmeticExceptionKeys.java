@@ -16,8 +16,8 @@ package com.fireflysemantics.math.arithmetic.exception;
 import com.fireflysemantics.math.exception.MathException;
 
 /**
- * Keys used to construct the {@link MathException} context for exceptions
- * thrown by this module.
+ * Keys used to construct the {@link MathException} {@code context} for
+ * exceptions thrown by this module.
  */
 public class ArithmeticExceptionKeys {
 	/** Private constructor */

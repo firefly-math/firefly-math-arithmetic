@@ -2,4 +2,4 @@
 
 - Replaced FastMath with Math.
 - Replaced CM Exceptions.
-- Used X and Y parameters whenever appropriate in order to make the exception context standardized.
+- Used X and Y parameters whenever appropriate in order to standardize the exception context across the module.
