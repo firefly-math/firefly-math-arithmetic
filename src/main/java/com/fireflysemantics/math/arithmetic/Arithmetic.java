@@ -30,10 +30,9 @@ import java.math.BigInteger;
 import com.fireflysemantics.math.exception.MathException;
 
 /**
- * Some useful, arithmetics related, additions to the built-in functions in
- * {@link Math}.
- *
+ * Arithmetic utility functions complementing {@link Math}.
  */
+
 public final class Arithmetic {
 
 	/** Private constructor. */
